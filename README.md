@@ -12,6 +12,7 @@ The following **required** functionality is completed:
 - [x]	User can **view tweets from their home timeline**
       - [x] User is displayed the username, name, and body for each tweet
       - [x] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+- [ ] User can refresh tweets timeline by pulling down to refresh
 
 The following **optional** features are implemented:
 
@@ -50,7 +51,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [1996] [Logan Le]
+    Copyright [1996] [ Claudia Martinez ]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
