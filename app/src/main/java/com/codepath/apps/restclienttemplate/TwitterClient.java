@@ -6,6 +6,7 @@ import com.codepath.oauth.OAuthBaseClient;
 import com.github.scribejava.apis.TwitterApi;
 import com.github.scribejava.core.builder.api.BaseApi;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 /*
@@ -50,6 +51,9 @@ public class TwitterClient extends OAuthBaseClient {
         params.put("count", 25);
         params.put("since_id",1);
         client.get(apiUrl, params, handler);
+    }
+
+    public void getHomeTimeline(JsonHttpResponseHandler debug) {
     }
 
     /* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint

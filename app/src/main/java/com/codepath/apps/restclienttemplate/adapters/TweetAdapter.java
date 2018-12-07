@@ -26,22 +26,37 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
     public TweetAdapter(Context context, List<Tweet> tweetList) {
         this.context = context;
         this.tweetList = tweetList;
+
     }
 
     private List<Tweet> tweetList;
+
+    public void clear() {
+        tweetList.clear();
+        notifyDataSetChanged();
+    }
+
+    // Add a list of items -- change to type used
+    public void addAll(List<Tweet> list) {
+        tweetList.addAll(list);
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.tweet_layout, parent, false);
         return new ViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         Tweet currentTweet = tweetList.get(position);
         viewHolder.bind(currentTweet);
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -63,6 +78,9 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder> 
             tvScreenName.setText(tweet.getUser().getScreenName());
             tvBody.setText(tweet.getBody());
             Glide.with(context).load(tweet.getUser().getProfileImUrl()).into(imgvProfile);
+
         }
+
     }
+
 }
